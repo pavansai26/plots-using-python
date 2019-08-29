@@ -1,0 +1,39 @@
+plt.figure(figsize=(10,10),facecolor='green')
+
+plt.subplot(1,2,1)
+x=np.linspace(0,10,25)
+plt.plot(x,np.sin(x),linestyle='--',color='blue',marker='+')
+plt.ylim(0,2)
+plt.xlim(0,10)
+plt.title('name of the plot')
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.grid(color='black')
+
+plt.subplot(1,2,2)
+plt.scatter(x=np.random.normal(0,1,10),y=range(10),color='red',marker='>')
+plt.title('name of the plot')
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.grid(color='black')
+
+
+
+
+
+
+import seaborn as sns
+
+sns.distplot(np.random.poisson(5,1000),bins=40,kde=True,rug=True)
+plt.text(0.2,0.4,'poisson 5\n distribution function')
+
+
+plt.figure(figsize=(10,8))
+sns.distplot(np.random.poisson(5,100000),bins=60,kde=True,rug=False,color='red')
+sns.distplot(np.random.poisson(10,100000),bins=60,kde=True,rug=False,color='blue')
+sns.distplot(np.random.poisson(15,100000),bins=60,kde=True,rug=False,color='red')
+sns.distplot(np.random.poisson(20,100000),bins=60,kde=True,rug=False,color='blue')
+plt.text(10,0.4,'poisson 5\n red')
+plt.text(10,0.5,'poisson10\n blue')
+
+
